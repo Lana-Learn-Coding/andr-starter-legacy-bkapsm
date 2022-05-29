@@ -11,19 +11,19 @@ import java.util.Date;
 import java.util.Locale;
 
 public class FormUtils {
-    public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyyy-mm-dd", Locale.forLanguageTag("vi"));
+    public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-mm-dd", Locale.forLanguageTag("vi"));
 
     private FormUtils() {
     }
 
     public static String getTextValue(TextView textView) {
-        if (ObjectUtils.anyNull(textView)) return "";
-        if (ObjectUtils.anyNull(textView.getText())) return "";
+        if (!ObjectUtils.allNotNull(textView)) return "";
+        if (!ObjectUtils.allNotNull(textView.getText())) return "";
         return textView.getText().toString();
     }
 
     public static void setTextValue(TextView textView, String text) {
-        if (ObjectUtils.anyNull(textView)) return;
+        if (!ObjectUtils.allNotNull(textView)) return;
         textView.setText(text);
     }
 

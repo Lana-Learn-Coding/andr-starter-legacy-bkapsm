@@ -14,9 +14,9 @@ android {
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments += [
-                    "room.schemaLocation"  : "$projectDir/schemas".toString(),
-                    "room.incremental"     : "true",
-                    "room.expandProjection": "true"
+                        "room.schemaLocation"  : "$projectDir/schemas".toString(),
+                        "room.incremental"     : "true",
+                        "room.expandProjection": "true"
                 ]
             }
         }
@@ -32,7 +32,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'org.apache.commons:commons-lang3:3.12.0'
+    implementation 'org.apache.commons:commons-lang3:3.8.1'
     implementation 'android.arch.persistence.room:runtime:1.1.1'
     annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
 
