@@ -8,6 +8,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.example.bkapsm.form.FormActivity;
+
 
 public class NavigableActivity extends AppCompatActivity {
     protected void navigate(Context context, Class<?> target) {
@@ -27,6 +29,7 @@ public class NavigableActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.menuitem_create) {
+            navigate(this, FormActivity.class);
             return true;
         }
 

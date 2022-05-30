@@ -3,4 +3,14 @@
     <string name="menuitem_home">Trang chủ</string>
     <string name="menuitem_search">Tìm kiếm</string>
     <string name="menuitem_create">Đăng kí học</string>
+
+
+    <string name="field_phone">Phone</string>
+    <string name="field_email">Email</string>
+    <string name="field_fullname">Họ và Tên</string>
+    <string name="field_note">Ghi chú</string>
+    <string name="field_subject">Môn học</string>
+    <string name="field_level">Level</string>
+    <string name="field_gender">Giới tính</string>
+    <string name="field_birthdate">Ngày sinh</string>
 </resources>
