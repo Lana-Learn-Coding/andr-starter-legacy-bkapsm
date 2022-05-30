@@ -13,6 +13,9 @@ public interface StudentDao {
     @Query("SELECT * FROM student")
     List<Student> getAll();
 
+    @Query("SELECT * FROM student WHERE fullname like :fullname and email like :email")
+    List<Student> getAll(String fullname, String email);
+
     @Delete
     void delete(Student... students);
 

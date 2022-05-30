@@ -18,6 +18,9 @@ import com.example.bkapsm.db.Student;
 import com.example.bkapsm.db.StudentDao;
 import com.example.bkapsm.form.FormActivity;
 
+import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -118,10 +121,16 @@ public class MainActivity extends NavigableActivity {
     }
 
     private void loadData() {
+        Bundle extras = ObjectUtils.defaultIfNull(getIntent().getExtras(), new Bundle());
+        final String email = StringUtils.defaultIfBlank(extras.getString("email"), "");
+        final String fullname = StringUtils.defaultIfBlank(extras.getString("fullname"), "");
+
         Executors.newSingleThreadExecutor().execute(new Runnable() {
             @Override
             public void run() {
-                final List<Student> items = dao.getAll();
+                final List<Student> items = StringUtils.isAllBlank(email, fullname)
+                    ? dao.getAll()
+                    : dao.getAll("%" + fullname + "%", "%" + email + "%");
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
