@@ -1,4 +1,4 @@
-package com.example.bkapsm.utils;
+package com.example.bkapsm.form;
 
 import android.widget.TextView;
 
@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.Locale;
 
 public class FormUtils {
-    public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-mm-dd", Locale.forLanguageTag("vi"));
+    public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-mm-dd", Locale.ENGLISH);
 
     private FormUtils() {
     }
