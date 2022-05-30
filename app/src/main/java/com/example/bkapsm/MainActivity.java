@@ -71,6 +71,7 @@ public class MainActivity extends NavigableActivity {
 
         if (id == R.id.item_create) {
             navigate(this, FormActivity.class);
+            return true;
         }
 
         if (id == R.id.item_edit) {
@@ -78,6 +79,7 @@ public class MainActivity extends NavigableActivity {
             intent.putExtra("id", item.getId());
             startActivity(intent);
             finish();
+            return true;
         }
 
         if (id == R.id.item_delete) {
@@ -109,9 +111,10 @@ public class MainActivity extends NavigableActivity {
                     }
                 })
                 .show();
+            return true;
         }
 
-        return true;
+        return false;
     }
 
     private void loadData() {
